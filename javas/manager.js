@@ -1,7 +1,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 var server = 'http://localhost/tanahguo/_server/mysql/';
 var map; 
-var maptypeid=google.maps.MapTypeId.ROADMAP;
+var maptypeid=google.maps.MapTypeId.SATELLITE;
 var array=[];
 var arraycircle=[];
 var geoarray=[];
@@ -15,7 +15,7 @@ var navigation=false;
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 function init(){
    tipe();
-   basemap();
+   basemap("tanah");
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 $(document).on('change','#pilihbasemap',function(){ 
@@ -36,6 +36,8 @@ function basemap(mylocation){
 	  map = new google.maps.Map(document.getElementById("map-canvas"),mapoptions);
    }
    else if(mylocation=="tanah"){
+	  var mapoptions = {center: pusat, zoom:11, mapTypeId: maptypeid}; 
+	  map = new google.maps.Map(document.getElementById("map-canvas"),mapoptions); 
       map.setZoom(15);
 	  pusat = new google.maps.LatLng(-0.874777, 100.430314);
       map.panTo(pusat);

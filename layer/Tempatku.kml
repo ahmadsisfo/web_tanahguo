@@ -314,7 +314,7 @@
 		<Placemark>
 			<name>05160</name>
 			<description><![CDATA[LUAS 7.421 m2<br />
-<img src="http://localhost/project/tanah/client/layer/kmlimg/1.jpg" />]]></description>
+<img src="http://localhost/tanahguo/layer/kmlimg/1.jpg" />]]></description>
 			<styleUrl>#msn_ylw-pushpin10</styleUrl>
 			<Polygon>
 				<tessellate>1</tessellate>
@@ -329,7 +329,7 @@
 		</Placemark>
 		<Placemark>
 			<name>05230</name><description><![CDATA[LUAS 6.237 m2<br />
-<img src="http://localhost/project/tanah/client/layer/kmlimg/2.jpg"/>]]></description>
+<img src="http://localhost/tanahguo/layer/kmlimg/2.jpg"/>]]></description>
 			<styleUrl>#msn_ylw-pushpin21</styleUrl>
 			<Polygon>
 				<tessellate>1</tessellate>
@@ -345,7 +345,7 @@
 		<Placemark>
 			<name>05231</name>
 <description><![CDATA[LUAS 2.536 m2<br />
-<img src="http://localhost/project/tanah/client/layer/kmlimg/3.jpg"/>]]></description>			<styleUrl>#msn_ylw-pushpin01</styleUrl>
+<img src="http://localhost/tanahguo/layer/kmlimg/3.jpg"/>]]></description>			<styleUrl>#msn_ylw-pushpin01</styleUrl>
 			<Polygon>
 				<tessellate>1</tessellate>
 				<outerBoundaryIs>
@@ -359,7 +359,7 @@
 		</Placemark>
 		<Placemark>
 			<name>jalan tanah</name>
-<description><![CDATA[<img src="http://localhost/project/tanah/client/layer/kmlimg/4.jpg"/>]]></description>			<styleUrl>#msn_ylw-pushpin6</styleUrl>
+<description><![CDATA[<img src="http://localhost/tanahguo/layer/kmlimg/4.jpg"/>]]></description>			<styleUrl>#msn_ylw-pushpin6</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -379,7 +379,7 @@
 		</Placemark>
 		<Placemark>
 			<name>bandar2</name>
-<description><![CDATA[<img src="http://localhost/project/tanah/client/layer/kmlimg/6.jpg"/>]]></description>
+<description><![CDATA[<img src="http://localhost/tanahguo/layer/kmlimg/6.jpg"/>]]></description>
 			<styleUrl>#msn_ylw-pushpin20</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
@@ -390,7 +390,7 @@
 		</Placemark>
 		<Placemark>
 			<name>bandar</name>
-<description><![CDATA[<img src="http://localhost/project/tanah/client/layer/kmlimg/6.jpg"/>]]></description>
+<description><![CDATA[<img src="http://localhost/tanahguo/layer/kmlimg/6.jpg"/>]]></description>
 			<styleUrl>#msn_ylw-pushpin40</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
@@ -401,7 +401,7 @@
 		</Placemark>
 		<Placemark>
 			<name>sungai</name>
-<description><![CDATA[<img src="http://localhost/project/tanah/client/layer/kmlimg/5.jpg"/>]]></description>
+<description><![CDATA[<img src="http://localhost/tanahguo/layer/kmlimg/5.jpg"/>]]></description>
 			<styleUrl>#msn_ylw-pushpin30</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
