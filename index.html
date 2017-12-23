@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GIS Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">       
+        <!-- <script type="text/javascript" src="cordova.js"></script> -->
+        <link rel="stylesheet" href="css/stylemobile.css" />
+		<!--<link rel="stylesheet" href="themes/mytheme.min.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.structure-1.3.2.min.css" />-->
+        <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
+		<script src="javas/jquery-1.9.1.min.js"></script>
+		<script src="javas/jquery.mobile-1.3.2.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADfuu8uTu92idN50Bf4hifkZ0Ka_qsphs"></script>
+		<script src="javas/manager.js" type="text/javascript"></script>
+		<script src="javas/polygon.js"></script>
+<style>
+
+#hitam{background:#FFFFFF; width:100vw; height:100vh; position:absolute; left:0; top:0;}
+#loading {
+    width:100px;height:100px;padding:20px;
+    background:transparent;position: fixed;
+    top: 50%;left: 50%;border-radius:50%;
+    margin-top: -75px;margin-left: -70px;
+}
+.loading2{
+    text-align:center;
+}
+#loading-image {position: absolute;z-index: 100;border-radius:50%;}</style>
+<script language="javascript" type="text/javascript">
+  $(window).load(function() {
+    $('.loading').hide();
+  });
+</script>
+    </head>
+    <body onload="init()">
+		<div data-role="page" id="page1">
+		    <div data-role="header" data-position="fixed" style="z-index:9999;" data-theme="b">            
+                <a href="#searchpanel" data-icon="grid">Menu</a>           
+                <a href="#setting" data-icon="gear">Setting</a>
+                <h1>Land GIS Application</h1>
+			</div>
+	    <div id="map-canvas" data-role="content" style="width:98%" data-position="fixed">
+		   <div id="hitam"><div id="loading"><img id="loading-image" src="picture/ajax-loader.gif" alt="Loading..." />
+           </div></div></div>
+        <div data-role="footer" data-position="fixed" style="" data-theme="b">
+		    <a href="#popuproute" id="getroute" style="position:fixed; display:none; top:-110%; right:50px;" data-rel="popup" data-mini="true" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="flip">Route</a>
+			<h1>&copy; 2013 Rnf v.1.1.2</h1>
+		</div>
+		<div data-role="panel" id="searchpanel" data-display="push" data-position="left" style="top:-50px; position:fixed; max-height:120vh; height:790px;">
+		    <!----------------------------------------------------------------------------------------------------------------->        
+			<div id="divdirection" style="display:none;">
+			    <div>
+				   <a href="#" id="controldivroute1" data-role="button" data-icon="minus" data-theme="b" onclick="divrouteback()">Minimize</a>
+				   <a href="#" id="controldivroute2" style="display:none;" data-role="button" data-icon="plus" data-mini="true" data-theme="a" onclick="divrouteback()">Route Info</a>
+				</div>
+				<div id="divroute"></div>
+			</div>
+			<!----------------------------------------------------------------------------------------------------------------->        
+		    <div id="topmenu">
+			   <div class="ui-body-b ui-body" style="border-radius:15px;">
+    				<h4><a href="#" onclick="topscreen()" data-icon="home" data-role="button" data-inline="true" data-mini="true">Back</a>Top Menu</h4>
+    				<div data-role="navbar">
+        				<ul>
+            			<li><button data-icon="bars" onclick="menuobjek()" data-iconpos="top" data-corners="false">Kategori Objek</button></li>
+             			<li><button data-icon="arrow-r" onclick="atribut()" data-iconpos="top" data-corners="false" >Atribut Search</button></li>
+            			</ul>
+						<ul>
+            			<li><button class="buttonget" data-icon="edit" onclick="divdistance()" data-iconpos="top" data-corners="false" disabled="" data-mini="true">Hitung Jarak</button></li>
+						<li><button id="sumbar" data-icon="gear" onclick="divcircle()" data-iconpos="top" data-corners="false">Radius Search</button></li>
+            			</ul>
+						<ul>
+            			<li><button data-icon="search" onclick="geolocation();" data-iconpos="top" data-corners="false">Your Position</button></li>
+						<li><button class="buttonget" data-icon="check" data-iconpos="top" data-corners="false" onclick="buttongetroute();" disabled="">Get Route</button></li>
+						</ul>
+    			    </div><br />
+			    </div>
+				<button id="langsunglokasi" data-icon="home" onclick=basemap('tanah') data-theme="e">View Tanah</button>
+				<a href="#page2" data-role="button" data-theme="a" data-transition="flow" data-icon="info">Informasi Tanah</a>
+			
+			</div>
+			<!----------------------------------------------------------------------------------------------------------------->        
+			<div id="menuobjek" data-theme="none" style="display:none;">
+		        <button class="back" data-theme="e" data-icon="home" onclick="topmenu()">Backto Topmenu</button>
+				<div class="ui-body-c ui-body" style="border-radius:15px; background:#AAAAFF">
+				<div id="divpilihantipe" style="display:none;"><br />
+				   <ul data-role="listview" data-inset="true" data-filter="true" id="pilihantipe" >
+				   </ul>
+				   <div class="loading2">loading...<img src="picture/20.gif" /></div>
+				   <p id="showalltipe"></p>
+				</div>
+				<div id="divpilihanjenis" style="display:none;">
+				   <button class="back" data-theme="b" data-icon="back" onclick="pilihantipe();">Back</button><br />
+				   <ul data-role="listview" data-inset="true" data-filter="true" id="pilihanjenis" >
+				   </ul>
+				   <div class="loading2">loading...<img src="picture/20.gif" /></div>
+				   <p id="showalljenis"></p>
+				</div>
+				<div id="divpilihandata" style="display:none;">
+				   <button class="back" data-theme="b" data-icon="back" onclick="pilihanjenis()">Back</button>
+				   <div data-role="fieldcontain"><span style="display:block; float:left; padding:7px; width:length;">Markertoogle&nbsp;</span> 
+    			   <select name="flip-7" id="flip-7" style="float:right;" data-role="slider" data-mini="true" value="on">
+            	 	 <option value="off">Off</option><option value="on">On</option>
+                   </select></div>
+				   <ul data-role="listview" data-filter="true" id="pilihandata" data-icon="star" data-iconpos="left">
+				   </ul>
+				   <div class="loading2">loading...<img src="picture/20.gif" /></div>
+				   <p id="showalldata"></p>
+				</div>
+				<div id="divatribut" style="display:none;">
+				   <ul data-role="listview" data-inset="true" data-icon="arrow-r">
+		              <li><a href="#" onclick=dataatribut('1')>Id Objek</a></li>
+					  <li><a href="#" onclick=dataatribut('2')>Nama Objek</a></li>
+					  <li><a href="#" onclick=dataatribut('3')>Alamat</a></li>
+					  <li><a href="#" onclick=dataatribut('4')>Deskripsi</a></li>
+					  <li><a href="#" onclick=dataatribut('5')>Koordinat</a></li>
+					  <li><a href="#" onclick=dataatribut('6')>Anything</a></li>
+			       </ul>
+				</div>
+				<div id="divdataatribut" style="display:none;">
+				   <button class="back" data-theme="b" data-icon="back" onclick="atribut()">Back</button>
+				   <div data-role="fieldcontain"><span style="display:block; float:left; padding:7px; width:length;">Markertoogle&nbsp;</span> 
+    			   <select name="flip-7" id="flip-8" style="float:left;" data-role="slider" data-mini="true" value="on">
+            	 	 <option value="off">Off</option><option value="on">On</option>
+                   </select>				
+				   </div>
+				   <div class="loading2">loading...<img src="picture/20.gif" /></div>
+				   <ul id="dataatribut" data-role="listview" data-filter="true" data-icon="star" data-filter-reveal="true" data-filter-placeholder="Search...">
+				   </ul>
+				</div>
+				<div id="divcircle" style="display:none;">
+				   <label for="selecttipe">Pilih Tipe :</label>
+	               <select id="selecttipe" onchange="jenis('untukradius');"><option></option></select>
+				   <label for="selectjenis">Pilih Jenis :</label>
+                   <select id="selectjenis"><option></option></select>    
+                   <label for="inputradius">Radius (km)</label>
+                   <input type="range" id="inputradius" name="inputradius" data-highlight="true" min="1" max="20" value="5">           
+                   <label for="selectdari">Dari (centerpoint) :</label>
+	               <select id="selectdari" onchange="jenis('untukradius');"><option value="tanah">Lokasi Tanah</option></select>
+				   <button id="buttoncariradius" data-theme="b" data-icon="search" onclick="tampilradius()">Cari</button>
+				   <ul id="dataatribut" data-theme="e" data-role="listview" data-inset="true" data-icon="star" data-filter-placeholder="Search...">
+				       <li><a href="#" onclick="divresultcircle();">Hasil Cari<span id="countcircle" class="ui-li-count">0</span></a></li>
+				   </ul>
+                </div>
+				<div id="divresultcircle" style="display:none;">
+				   <button class="back" data-theme="b" data-icon="back" onclick="divcircle()">Back</button>
+				   <div data-role="fieldcontain"><span style="display:block; float:left; padding:7px; width:length;">TOGLE MARKER </span> 
+    			   <select name="flip-7" id="flip-9" style="float:left;" data-role="slider" data-mini="true">
+            	 	  <option value="off">Off</option><option value="on">On</option>
+                   </select>				
+				   </div>
+				   <div class="loading2">loading...<img src="picture/20.gif" /></div>
+				   <ul id="resultcircle" data-role="listview" data-filter="true" data-icon="star" data-filter-placeholder="Search...">
+				   </ul>
+				</div>
+				<div id="divdistance" style="display:none;">
+				   <label for="un" >Start-Finish:</label>
+            	   <select id="origin" class="selectpoint"><option value="">----</option></select>
+				   <select id="destination" class="selectpoint"><option value="">----</option></select>
+				   <button data-icon="check" data-theme="b" onclick="calculateDistances();">Hitung Jarak</button>
+				   <ul id="luoutputdiv" data-role="listview" data-inset="true">
+    			   	   <li data-role="list-divider" id="ouputdivider"></li>
+    				   <li id="outputDiv">
+    				   </li>
+	 			   </ul>
+ 		        </div>
+ 			    </div>
+    		
+				<a href="#popupinfo" id="hidenlink" style="display:none;" data-rel="popup" data-transition="pop" data-position-to="window"></a>
+            </div> 	
+        </div>
+        <!----------------------------------------------------------------------------------------------------------------->        
+        <div data-role="panel" id="setting" data-display="push" data-position="right" style="top:-50px; position:fixed; max-height:120vh; height:790px;">
+		    <button class="back" data-theme="d" data-icon="arrow-l" onclick="topscreen()">Back</button>
+			<div class="ui-body-b ui-body" style="border-radius:15px;">
+			    <label for="setserver">Clear Marker, Rout & circle :</label>
+				<button data-icon="plus" onclick="clearall()" data-theme="b">Pilih Objek</button>
+				<ul id="clearall" data-role="listview" data-inset="true" data-icon="delete" data-theme="b" style="display:none;">
+		            <li><a href="#" onclick=clearoverlays('1')>Marker</a></li>
+				    <li><a href="#" onclick=clearoverlays('2')>Circle</a></li>
+				    <li><a href="#" onclick=clearoverlays('3')>Direction</a></li>
+				    <li><a href="#" onclick=clearoverlays('4')>All objek</a></li>
+				    <li><a href="#" onclick=clearoverlays('5')>Your Position</a></li>
+				</ul>
+				<label for="setserver">Set BaseMap :</label>
+				<select id="pilihbasemap" data-theme="e">
+   	   			    <option value="1">RoadMap</option>
+			        <option value="3">Satellite</option>
+			        <option value="2">Hybrid</option>
+			        <option value="4">Terrain</option>
+			    </select>
+				<label for="setserver">Set Zoom :</label>
+				<button id="indonesia" data-icon="plus" onclick="zoomto()" data-theme="b">Zoom To</button>
+				<ul id="zoomto" data-role="listview" data-inset="true" data-icon="search" data-theme="b" style="display:none;">
+		            <li><a href="#" onclick=basemap('indonesia')>Indonesia</a></li>
+				    <li><a href="#" onclick=basemap('sumbar')>Sumatera Barat</a></li>
+				    <li><a href="#" onclick=basemap('padang')>Kota Padang</a></li>
+				    <li><a href="#" onclick=basemap('tanah')>Lokasi Tanah</a></li>
+				</ul>
+				<label for="setserver">Refreh Map :</label>
+				<button id="indonesia" data-icon="refresh" onclick="basemap()" data-theme="a">Refresh</button>
+				<label for="setserver">Credit :</label>
+				<a href="#credit" data-role="button" data-rel="popup" data-icon="info" data-theme="e">Credit</a>
+			</div>
+		</div>
+	    <!----------------------------------------------------------------------------------------------------------------->        
+		<div data-role="popup" id="popuproute" data-theme="b" class="ui-corner-all" data-overlay-theme="a">
+		    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <div style="margin:0px 20px 20px 20px;">
+            <h3>Please Chose</h3>
+            <label for="un" >Start-Finish:</label>
+            <select id="dari" class="selectpoint"><option value="">----</option></select>
+			<select id="tujuan" class="selectpoint"><option value="">----</option></select>
+			<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+        	   <legend>Travel Mode :</legend>
+        	   <input type="radio" value="DRIVING" name="checkbox-h-2" class="cbox" id="checkbox-h-2a" data-theme="e" checked="">
+        	   <label for="checkbox-h-2a"><img src="layer/icon/car.png" style="margin:-5px -10px 0 -10px; width:25px; height:25px;" /></label>
+        	   <input type="radio" value="BICYCLING" name="checkbox-h-2" class="cbox" id="checkbox-h-2b" data-theme="e">
+        	   <label for="checkbox-h-2b"><img src="layer/icon/sepeda.png" style="margin:-5px -7px 0 -7px; width:25px; height:25px;" /></label>
+        	   <input type="radio" value="TRANSIT" name="checkbox-h-2" class="cbox" id="checkbox-h-2c" data-theme="e">
+        	   <label for="checkbox-h-2c"><img src="layer/icon/bus.png" style="margin:-7px -7px 0 -7px; width:25px; height:29px;"/></label>
+			   <input type="radio" value="WALKING" name="checkbox-h-2" class="cbox" id="checkbox-h-2d" data-theme="e">
+        	   <label for="checkbox-h-2d"><img src="layer/icon/walking.png" style="margin:-5px -5px 0 -5px;"/></label>
+            </fieldset>
+			<a href="#one" onclick="pilihtravel()" data-rel="back" data-role="button" data-icon="check" data-prefetch data-theme="b">Get Route</a>
+            </div>
+        </div>
+		<div data-role="popup" id="credit" data-overlay-theme="a" data-theme="c" style="max-width:400px; min-width:260px;" >
+    	   <div data-role="header" data-theme="a" class="ui-corner-top"><h1>Developer ?</h1></div>
+    	   <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+        	  <h3 class="ui-title">Name : Rahmat Nurfajri</h3>
+        	  <p>Information System<br /> Andalas University</p>
+        	  <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">Cancel</a>
+    	   </div>
+    	</div>
+        </div>
+<!----------------------------------------------------------------------------------------------------------------->        
+		
+<!--------------------------------------------------------------------------------------------------------------------------->        
+		<div data-role="page" id="page2" data-add-back-btn="true" data-theme="d">
+            <div data-role="header" data-position="fixed" data-theme="b">            
+                <h1>Informasi Tanah</h1>
+			</div>
+			    
+	        <div id="canvas" data-role="content" data-theme="b">
+			    <style>
+				#canvas{font-size:18px; font-family:'Segoe UI Semilight'; color:#0E0E39;}
+				</style>
+				<h2>Tanah Guo Kuranji</h2>
+				<p>Tanah ini adalah tanah subur perbukitan barisan yang memiliki sertifikat hak milik dari BPN RI. 
+				Kondisi Geografis yang bagus dan mendukung menjadikan tanah ini memiliki nilai yang tinggi dalam bidang pertanian, peternakan, pariwisata, keamanan dan lain-lain.
+				</p>
+				<p>Lokasi Tanah ini beralamat di Kelurahan Kuranji, Kecamatan Kuranji, Kota Padang, Sumatera Barat. Wilayah ini merupakan salah satu wilayah evakuasi waspada tsunami Kota Padang.
+				Lokasi ini terletak di <span style="color:green">zona hijau</span> bencana tsunami, karena kawasan ini merupkan dataran tinggi yang terletak 10 km dari bibir pantai.
+				</p>
+				<a href="#page1" onclick="khusustanah('tsunami');" data-mini="true" data-inline="true" data-theme="b" data-transition="slide" data-role="button">Show Map</a>
+				<a href="#popFoto1" data-rel="popup" data-position-to="window" data-mini="true" data-inline="true" data-theme="b" data-transition="flip" data-role="button">Show Foto</a>
+				<p><a href="#popFoto1" data-rel="popup" data-position-to="window" data-transition="flip"><img src="layer/foto/15.JPG" style="border-radius:20px;;box-shadow:10px 10px 10px #bbb; width:100%; max-width:500px"  /></a></p>
+				<p>Status tanah ini adalah hak milik yang dipegang oleh 4 bersaudara yaitu :
+				<ul><li>SYAFRIL (gelar RAJA MANGKUTO)</li><li>YANIMAR</li><li>M. ZAINUDDIN</li><li>APET SYAFARUDDIN</li></ul> 
+				<h4>Sertifikat Tanah ini telah dikeluarkan oleh Badan Pertanahan Nasional Republik Indonesia yang Memenuhi Ketentuan Peraturan Menteri Negara Agraria/Kepala Badan Pertanahan Nasional Nomor 3
+				tahun 1997 dan Ketentuan P.P. 24 Tahun 1997</h4>
+				<a href="#popFoto2" data-rel="popup" data-mini="true" data-position-to="window" data-inline="true" data-theme="b" data-transition="flip" data-role="button">Show Certificate</a>
+				<p>Struktur Tanah ini dipecah oleh Badan Pertanahan Nasional RI menjadi 3 (tiga) bagian disebabkan dibatasi oleh Alam seperti sungai dan bandar menurut ketentuan yang berlaku. Dapat dilihat pada peta.</p>
+				<a href="#page1" onclick="khusustanah('lokasi');" data-mini="true" data-inline="true" data-theme="b" data-transition="slidedown" data-role="button">Show Map</a>
+				<p>Rinciannya adalah sebagai berikut :
+				<table data-role="table" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="display..." data-column-popup-theme="a">
+         		<thead>
+          		<tr class="ui-bar-d">
+             		<th data-priority="2">Keterangan</th><th>1</th><th>2</th><th>3</th>
+				    </tr>
+         		</thead>
+         		<tbody>
+           		<tr><th>NIB</th><td>03.01.07.07. <strong>05160</strong></td>
+				    <td>03.01.07.07. <strong>05230</strong></td>
+					<td>03.01.07.07. <strong>05231</strong></td></tr>
+           		<tr><th>HAK</th><td>Milik</td><td>Milik</td><td>Milik</td></tr>
+				<tr><th>No. HAK</th><td>6559</td><td>6668</td><td>6675</td></tr>
+				<tr><th>Asal HAK</th><td>Konversi bidang</td><td>Konversi bidang</td><td>Konversi bidang</td></tr>
+				<tr><th>Pendaftaran</th><td>188/BAP/2013</td><td>500/BAP/2013</td><td>501/BAP/2013</td></tr>
+				<tr><th>No.S-Ukur</th><td>00086/2013</td><td>00085/2013</td><td>00084/2013</td></tr>
+				<tr><th>LUAS</th><td>7.421 m2</td><td>6.237 m2</td><td>2.536 m2</td></tr>
+				<tr><th></th><td style="background:#5DDC32; color:#fff" colspan="3">Total Luas : 16.194 m2 = 1,6 ha</td></tr>
+				
+				</tbody>
+       			</table>
+				</p>
+				<p>Tanah ini merupakan tanah yang produktif dan subur. Sekarang tanah ini sedang dimanfaatkan untuk lahan peternakan (sapi & ayam) dan lahan pertanian. Adapun contoh pertanian yang sedang dikembangkan yaitu :
+				<table data-role="table" id="table-custom-1" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Columns..." data-column-popup-theme="a">
+         		<thead>
+          		<tr class="ui-bar-d">
+             		<th>No</th><th>Nama Tumbuhan</th></tr>
+         		</thead>
+         		<tbody>
+           		<tr><th>1</th><td><a href="#">Padi</a></td></tr>
+           		<tr><th>2</th><td><a href="#">Kelapa</a></td></tr>
+           		<tr><th>3</th><td><a href="#">Kakao</a></td></tr>
+           		<tr><th>4</th><td><a href="#">Guava (Jambu Biji)</a></td></tr>
+           		<tr><th>5</th><td><a href="#">Rambutan</a></td></tr>
+           		<tr><th>6</th><td><a href="#">Pepaya</a></td></tr>
+           		<tr><th>7</th><td><a href="#">Jambu Bol</a></td></tr>
+           		<tr><th>8</th><td><a href="#">Gardan Munggu</a></td></tr>
+           		<tr><th>9</th><td><a href="#">Durian</a></td></tr>
+           		<tr><th>10</th><td><a href="#">Nangka</a></td></tr>
+           		<tr><th>11</th><td><a href="#">Jambu Monyet</a></td></tr>
+           		<tr><th>12</th><td><a href="#">Pinang</a></td></tr>
+           		<tr><th>13</th><td><a href="#">Asam Katuri</a></td></tr>
+           		<tr><th>14</th><td><a href="#">Asam Kapas</a></td></tr>
+           		<tr><th>15</th><td><a href="#">Jengkol</a></td></tr>
+		   		<tr><th>16</th><td><a href="#">Sirsak</a></td></tr>
+				<tr><th>17</th><td><a href="#">Manggis</a></td></tr>
+				<tr><th>18</th><td><a href="#">Singkong</a></td></tr>
+				<tr><th>19</th><td><a href="#">Dll</a></td></tr>
+           		</tbody>
+       			</table>
+				</p>
+				<p>Kondisi lingkungan dan Masyarakat di kel. Kuranji terutama di sekitar kawasan tanah ini tentram dan damai serta didukung oleh watak masyarakat yang ramah dan ulet bertani. </p>
+				<a href="#page1" style="display:none;" id="topage1">Show Map</a>
+				
+				<!--<label for="setserver">Set Pengeluaran Baru :</label>
+				<input type="text" id="nama" name="inputcari" placeholder="Nama Pengeluaran">               
+                <input type="text" id="jumlah" placeholder="Jumlah Pengeluaran" />
+				<input type="date" id="tanggal" placeholder="" />
+				<button class="new" data-icon="arrow-r" onclick="inputform()" >Create New</button>
+				<input id="btn-simpan" type="submit" data-icon="plus" data-iconpos="left" value="Simpan" onclick="inputform();">-->
+		    </div>
+		
+            <div data-role="footer" data-position="fixed" data-theme="b">
+			    <h1>&copy; 2013 RNF v.1.1.2</h1>
+		    </div>
+			<div data-role="popup" id="popFoto1" data-overlay-theme="a" data-theme="d" style="width:90vw; height:90vh; border:0;" data-corners="false">
+               <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+	           <div><iframe src="tanah.html" style="width:90vw; height:90vh; left:0; border:0;"></iframe></div>
+            </div>
+			<div data-role="popup" id="popFoto2" data-overlay-theme="a" data-theme="d" style="width:90vw; height:90vh; border:0;" data-corners="false">
+               <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+               <div><iframe src="certificate.html" style="width:90vw; height:90vh; left:0; border:0;"></iframe></div>
+            </div>
+		</div>
+		
+    </body>	
+</html>

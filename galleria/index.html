@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="jquery-1.9.1.min.js"></script>
+        <script src="galleria-1.3.3.min.js"></script>
+        <style>
+            .galleria{height: 400px;}
+        </style>
+    </head>
+    <body>
+        <div class="galleria">
+            <img src="guo/1.jpg">
+			<img src="guo/2.jpg">
+			<img src="guo/3.jpg">
+			<img src="guo/4.jpg">
+        </div><br/>
+		<div class="galleria">
+           <a href="http://www.youtube.com/watch?v=NrtkFg3qD0w"><img src="guo/1.jpg"></a>
+           <a href="http://vimeo.com/12309423"><span class="video">Watch this on Vimeo!</span></a>
+       </div>
+        <script>
+            Galleria.loadTheme('themes/classic/galleria.classic.min.js');
+            Galleria.run(".galleria");
+        </script>
+    </body>
+</html>

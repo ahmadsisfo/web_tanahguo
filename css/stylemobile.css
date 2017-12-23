@@ -1,0 +1,24 @@
+#map-canvas{
+	position:absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right:0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.ui-panel-inner {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    overflow-y: auto;
+}
+
+p
+{
+text-align:justify;
+}

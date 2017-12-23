@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Tempatku.kml</name>
+	<Style id="sn_ylw-pushpin30">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>7f7faaff</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin6">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin7</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin21</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin10">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>7f7faaff</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin20">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin50</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin30</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin30">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff55</color>
+			<width>3.5</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin30">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin6</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin00</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin21">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>e3ffffff</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin20</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin200</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin40">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin40</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin60</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin40">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff55</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin11">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>7fffffff</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin7">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>e3ffffff</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin6">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ebffaa55</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin50">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff55</color>
+			<width>3.5</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin000">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin11</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin6</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin6">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>7fffffff</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin20">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>7f0055ff</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin01">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin30</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin10</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin21">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin00</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin01</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin00">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ebffaa55</color>
+			<width>5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin200">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>7f0055ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin01">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>7f00aaff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin60">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff55</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin00">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>7f00aaff</color>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>Tempatku</name>
+		<open>1</open>
+		<LookAt>
+			<longitude>100.4297191314582</longitude>
+			<latitude>-0.8747488880377531</latitude>
+			<altitude>0</altitude>
+			<heading>4.925674966268253</heading>
+			<tilt>45.00034152787612</tilt>
+			<range>102.4309374978684</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<Style>
+			<ListStyle>
+				<listItemType>check</listItemType>
+				<ItemIcon>
+					<state>open</state>
+					<href>:/mysavedplaces_open.png</href>
+				</ItemIcon>
+				<ItemIcon>
+					<state>closed</state>
+					<href>:/mysavedplaces_closed.png</href>
+				</ItemIcon>
+				<bgColor>00ffffff</bgColor>
+				<maxSnippetLines>2</maxSnippetLines>
+			</ListStyle>
+		</Style>
+		<Placemark>
+			<name>05160</name>
+			<description><![CDATA[LUAS 7.421 m2<br />
+<img src="http://localhost/project/tanah/client/layer/kmlimg/1.jpg" />]]></description>
+			<styleUrl>#msn_ylw-pushpin10</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							100.4307628919488,-0.8738516996689784,0 100.4304270545679,-0.874090160723391,0 100.4302867342837,-0.874204762820761,0 100.4301653162598,-0.8743934231762527,0 100.4302906597676,-0.874448087851988,0 100.4303410454309,-0.8744937499062976,0 100.4304677039154,-0.8745822072680468,0 100.4304914916763,-0.8746186263185751,0 100.4304409885905,-0.8747116464810354,0 100.430412874025,-0.8748183092117351,0 100.4303921330345,-0.8749042007907746,0 100.430471737237,-0.8750424876214795,0 100.4306507274733,-0.8749932328876606,0 100.4307899999766,-0.8750097603269644,0 100.4308431691666,-0.8750001104044517,0 100.4309461565846,-0.8746742741324334,0 100.4309921134751,-0.8744008784317039,0 100.4310056085304,-0.8742628442046876,0 100.4309991635084,-0.8741767323590178,0 100.4309009155825,-0.8741147223345559,0 100.430786578754,-0.87402058562115,0 100.4307762395997,-0.8739090599415635,0 100.4307628919488,-0.8738516996689784,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>05230</name><description><![CDATA[LUAS 6.237 m2<br />
+<img src="http://localhost/project/tanah/client/layer/kmlimg/2.jpg"/>]]></description>
+			<styleUrl>#msn_ylw-pushpin21</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							100.4301438902561,-0.8744306047236964,0 100.4300841325982,-0.8744984123989715,0 100.4299050892473,-0.8746367484669241,0 100.4297593530978,-0.8747554075875696,0 100.4297011207221,-0.8747823664560065,0 100.4296332483874,-0.8748665425770825,0 100.4295302304332,-0.8749681019997043,0 100.429754046606,-0.8752255128039342,0 100.4298304320364,-0.8752844756773524,0 100.4298948547764,-0.8753564107129332,0 100.4299531917907,-0.8753940777804568,0 100.4300382798793,-0.8752923082163024,0 100.4301324578303,-0.8751737976181255,0 100.4302775485499,-0.8750886485338213,0 100.4304659469032,-0.8750429340112528,0 100.4303865697354,-0.8749064353329406,0 100.4304082145339,-0.8748042684879371,0 100.4304393711657,-0.8747003833074785,0 100.4304808893433,-0.874616893975504,0 100.4304577541467,-0.8745807026053294,0 100.4303380110741,-0.8745033073054482,0 100.4302890144813,-0.874454752224604,0 100.4301662801405,-0.8743983248455337,0 100.4301438902561,-0.8744306047236964,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>05231</name>
+<description><![CDATA[LUAS 2.536 m2<br />
+<img src="http://localhost/project/tanah/client/layer/kmlimg/3.jpg"/>]]></description>			<styleUrl>#msn_ylw-pushpin01</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							100.4298311473947,-0.8755333806421902,0 100.4299226169531,-0.8755500254464593,0 100.4300500547746,-0.8756633268491504,0 100.4302149860918,-0.8756914474471145,0 100.4303608353592,-0.8756605818227512,0 100.4304627572007,-0.8756787176044715,0 100.4305397703821,-0.8757427106812639,0 100.4305347360342,-0.8757768376928625,0 100.4305903987663,-0.8758412709840316,0 100.4306295948004,-0.8757915178843154,0 100.4305670085862,-0.8756624440983111,0 100.4305656157744,-0.8755473401564647,0 100.4303756392231,-0.8750721575081747,0 100.4302847517633,-0.8750971937405849,0 100.4301404918198,-0.8751873721448351,0 100.4299194497789,-0.8754605722394265,0 100.4298311473947,-0.8755333806421902,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>jalan tanah</name>
+<description><![CDATA[<img src="http://localhost/project/tanah/client/layer/kmlimg/4.jpg"/>]]></description>			<styleUrl>#msn_ylw-pushpin6</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					100.4304147207374,-0.8741029077371025,0 100.4302708699738,-0.8742239172289883,0 100.4301638805806,-0.8743855141098568,0 100.4301447800705,-0.8744330847915086,0 100.4300783841362,-0.8745004798701692,0 100.4297646577529,-0.8747463965785695,0 100.4296998913483,-0.8747804032300975,0 100.429637387746,-0.8748558125657104,0 100.4295264520836,-0.8749637496484964,0 100.4293624337786,-0.8751115335688933,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>rencana jalan</name>
+			<styleUrl>#msn_ylw-pushpin000</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					100.4304151813181,-0.874098712181968,0 100.4306465798684,-0.8739293601517657,0 100.4308531567537,-0.8737852165141242,0 100.4309633053045,-0.8737152922958021,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>bandar2</name>
+<description><![CDATA[<img src="http://localhost/project/tanah/client/layer/kmlimg/6.jpg"/>]]></description>
+			<styleUrl>#msn_ylw-pushpin20</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					100.4303795437723,-0.8750741725813053,0 100.4304318437772,-0.875215532388241,0 100.4305481719056,-0.8754989600131402,0 100.4305685119826,-0.8755636944406121,0 100.430572193969,-0.8756614851210246,0 100.4306412826722,-0.8758087090880182,0 100.4306850549715,-0.8758924589470699,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>bandar</name>
+<description><![CDATA[<img src="http://localhost/project/tanah/client/layer/kmlimg/6.jpg"/>]]></description>
+			<styleUrl>#msn_ylw-pushpin40</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					100.4301593920757,-0.8743940477502349,0 100.4302275230764,-0.8744230318446541,0 100.4302907622309,-0.8744531413785264,0 100.430337085692,-0.8744974306529724,0 100.4304584027629,-0.8745789269773079,0 100.4304832503504,-0.8746183574113864,0 100.4304397781897,-0.8747103731651579,0 100.4304093305098,-0.8748145812219338,0 100.4303911640248,-0.8749050202504282,0 100.4304733257197,-0.8750434458637713,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>sungai</name>
+<description><![CDATA[<img src="http://localhost/project/tanah/client/layer/kmlimg/5.jpg"/>]]></description>
+			<styleUrl>#msn_ylw-pushpin30</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					100.4307602517003,-0.8738270055243703,0 100.4307793833322,-0.8739097177660948,0 100.4307904711619,-0.8740199859562434,0 100.4309022853662,-0.8741112809578626,0 100.4310029514827,-0.8741746458952922,0 100.4310098260538,-0.8742631187315908,0 100.4309965135637,-0.8743955615734609,0 100.4309715825259,-0.8745230664255163,0 100.4309447490272,-0.8746829894654233,0 100.4308387471283,-0.8750016670312306,0 100.4307802406339,-0.8750118945230887,0 100.4306458267211,-0.874995748069842,0 100.4304723019724,-0.8750437768037785,0 100.4302825458738,-0.8750907947811145,0 100.4301368877284,-0.8751775986329481,0 100.4300447737518,-0.8752977689652641,0 100.4299133372222,-0.8754542460188732,0 100.4297913039052,-0.8755516110460275,0 100.4296676374836,-0.8755650160342738,0 100.4295675539324,-0.8756101145202867,0 100.4294781886093,-0.8756709147780557,0 100.4294059590634,-0.8757626396561471,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
